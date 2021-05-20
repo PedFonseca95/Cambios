@@ -39,6 +39,7 @@ namespace Cambios
             this.lbl_resultado = new System.Windows.Forms.Label();
             this.lbl_status = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.btn_troca = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -96,46 +97,61 @@ namespace Cambios
             // 
             // btn_converter
             // 
+            this.btn_converter.Enabled = false;
             this.btn_converter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_converter.Location = new System.Drawing.Point(37, 174);
             this.btn_converter.Name = "btn_converter";
-            this.btn_converter.Size = new System.Drawing.Size(121, 29);
+            this.btn_converter.Size = new System.Drawing.Size(85, 29);
             this.btn_converter.TabIndex = 6;
             this.btn_converter.Text = "Converter";
             this.btn_converter.UseVisualStyleBackColor = true;
+            this.btn_converter.Click += new System.EventHandler(this.btn_converter_Click);
             // 
             // lbl_resultado
             // 
-            this.lbl_resultado.AutoSize = true;
             this.lbl_resultado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_resultado.Location = new System.Drawing.Point(166, 180);
+            this.lbl_resultado.Location = new System.Drawing.Point(166, 174);
             this.lbl_resultado.Name = "lbl_resultado";
-            this.lbl_resultado.Size = new System.Drawing.Size(290, 17);
+            this.lbl_resultado.Size = new System.Drawing.Size(290, 29);
             this.lbl_resultado.TabIndex = 7;
             this.lbl_resultado.Text = "Escolha um valor, moeda de origem e destino";
+            this.lbl_resultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_status
             // 
-            this.lbl_status.AutoSize = true;
             this.lbl_status.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_status.Location = new System.Drawing.Point(37, 236);
+            this.lbl_status.Location = new System.Drawing.Point(37, 239);
             this.lbl_status.Name = "lbl_status";
-            this.lbl_status.Size = new System.Drawing.Size(46, 17);
+            this.lbl_status.Size = new System.Drawing.Size(419, 26);
             this.lbl_status.TabIndex = 8;
             this.lbl_status.Text = "Status";
+            this.lbl_status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(166, 236);
+            this.progressBar1.Location = new System.Drawing.Point(37, 278);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(290, 23);
+            this.progressBar1.Size = new System.Drawing.Size(419, 23);
             this.progressBar1.TabIndex = 9;
+            // 
+            // btn_troca
+            // 
+            this.btn_troca.Enabled = false;
+            this.btn_troca.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_troca.Image = global::Cambios.Properties.Resources.ic_change;
+            this.btn_troca.Location = new System.Drawing.Point(126, 174);
+            this.btn_troca.Name = "btn_troca";
+            this.btn_troca.Size = new System.Drawing.Size(32, 29);
+            this.btn_troca.TabIndex = 10;
+            this.btn_troca.UseVisualStyleBackColor = true;
+            this.btn_troca.Click += new System.EventHandler(this.btn_troca_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 289);
+            this.ClientSize = new System.Drawing.Size(497, 322);
+            this.Controls.Add(this.btn_troca);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lbl_status);
             this.Controls.Add(this.lbl_resultado);
@@ -149,6 +165,7 @@ namespace Cambios
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Câmbios";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,6 +184,7 @@ namespace Cambios
         private System.Windows.Forms.Label lbl_resultado;
         private System.Windows.Forms.Label lbl_status;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button btn_troca;
     }
 }
 
