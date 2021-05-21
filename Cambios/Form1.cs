@@ -26,6 +26,8 @@ namespace Cambios
 
         private DialogService dialogService;
 
+        private DataService dataService;
+
         #endregion
         
         public Form1()
@@ -34,6 +36,7 @@ namespace Cambios
             networkService = new NetworkService();
             apiService = new ApiService();
             dialogService = new DialogService();
+            dataService = new DataService();
             LoadRates();
         }
 
@@ -59,6 +62,7 @@ namespace Cambios
             if (rates.Count == 0) // Se a lista de rates não tiver sido carregada ou estiver vazia
             {
                 lbl_resultado.Text = "Não há ligação à internet.\nNão foram previamente carregadas as taxas.\nTente novamente mais tarde.";
+                lbl_status.Text = "Primeira inicialização deverá ter ligação à Internet";
                 return; // Termina a execução do método LoadRates()
             }
 
@@ -90,8 +94,8 @@ namespace Cambios
         }
 
         private void LoadLocalRates()
-        {
-            MessageBox.Show("Não está implementado");
+        {            
+            rates = dataService.GetData();
         }
 
         private async Task LoadApiRates()
@@ -103,6 +107,10 @@ namespace Cambios
             // async e await serve para que a aplicação continue a correr enquanto são carregadas as taxas - Tarefa asincrona  
 
             rates = (List<Rate>)response.Result;
+
+            dataService.DeleteData();
+
+            dataService.SaveData(rates);
         }
 
         private void btn_converter_Click(object sender, EventArgs e)

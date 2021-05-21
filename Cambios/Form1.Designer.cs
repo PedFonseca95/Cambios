@@ -112,7 +112,7 @@ namespace Cambios
             this.lbl_resultado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_resultado.Location = new System.Drawing.Point(166, 174);
             this.lbl_resultado.Name = "lbl_resultado";
-            this.lbl_resultado.Size = new System.Drawing.Size(290, 29);
+            this.lbl_resultado.Size = new System.Drawing.Size(290, 65);
             this.lbl_resultado.TabIndex = 7;
             this.lbl_resultado.Text = "Escolha um valor, moeda de origem e destino";
             this.lbl_resultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
